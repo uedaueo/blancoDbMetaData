@@ -1,6 +1,3 @@
-/*
- * このソースコードは blanco Frameworkにより自動生成されました。
- */
 package blanco.dbmetadata.resourcebundle;
 
 import java.util.Locale;

@@ -1,6 +1,3 @@
-/*
- * このソースコードは blanco Frameworkにより自動生成されました。
- */
 package blanco.dbmetadata.valueobject;
 
 /**
@@ -426,5 +423,67 @@ public class BlancoDbMetaDataKeyStructure {
         buf.append(",DEFERRABILITY=" + fDeferrability);
         buf.append("]");
         return buf.toString();
+    }
+
+    /**
+     * このバリューオブジェクトを指定のターゲットに複写します。
+     *
+     * <P>使用上の注意</P>
+     * <UL>
+     * <LI>オブジェクトのシャロー範囲のみ複写処理対象となります。
+     * <LI>オブジェクトが循環参照している場合には、このメソッドは使わないでください。
+     * </UL>
+     *
+     * @param target target value object.
+     */
+    public void copyTo(final BlancoDbMetaDataKeyStructure target) {
+        if (target == null) {
+            throw new IllegalArgumentException("Bug: BlancoDbMetaDataKeyStructure#copyTo(target): argument 'target' is null");
+        }
+
+        // No needs to copy parent class.
+
+        // Name: fPktableCat
+        // Type: java.lang.String
+        target.fPktableCat = this.fPktableCat;
+        // Name: fPktableSchem
+        // Type: java.lang.String
+        target.fPktableSchem = this.fPktableSchem;
+        // Name: fPktableName
+        // Type: java.lang.String
+        target.fPktableName = this.fPktableName;
+        // Name: fPkcolumnName
+        // Type: java.lang.String
+        target.fPkcolumnName = this.fPkcolumnName;
+        // Name: fFktableCat
+        // Type: java.lang.String
+        target.fFktableCat = this.fFktableCat;
+        // Name: fFktableSchem
+        // Type: java.lang.String
+        target.fFktableSchem = this.fFktableSchem;
+        // Name: fFktableName
+        // Type: java.lang.String
+        target.fFktableName = this.fFktableName;
+        // Name: fFkcolumnName
+        // Type: java.lang.String
+        target.fFkcolumnName = this.fFkcolumnName;
+        // Name: fKeySeq
+        // Type: short
+        target.fKeySeq = this.fKeySeq;
+        // Name: fUpdateRule
+        // Type: short
+        target.fUpdateRule = this.fUpdateRule;
+        // Name: fDeleteRule
+        // Type: short
+        target.fDeleteRule = this.fDeleteRule;
+        // Name: fFkName
+        // Type: java.lang.String
+        target.fFkName = this.fFkName;
+        // Name: fPkName
+        // Type: java.lang.String
+        target.fPkName = this.fPkName;
+        // Name: fDeferrability
+        // Type: short
+        target.fDeferrability = this.fDeferrability;
     }
 }

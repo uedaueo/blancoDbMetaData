@@ -1,6 +1,3 @@
-/*
- * このソースコードは blanco Frameworkにより自動生成されました。
- */
 package blanco.dbmetadata.valueobject;
 
 /**
@@ -686,5 +683,91 @@ public class BlancoDbMetaDataColumnStructure {
         buf.append(",WRITABLE=" + fWritable);
         buf.append("]");
         return buf.toString();
+    }
+
+    /**
+     * このバリューオブジェクトを指定のターゲットに複写します。
+     *
+     * <P>使用上の注意</P>
+     * <UL>
+     * <LI>オブジェクトのシャロー範囲のみ複写処理対象となります。
+     * <LI>オブジェクトが循環参照している場合には、このメソッドは使わないでください。
+     * </UL>
+     *
+     * @param target target value object.
+     */
+    public void copyTo(final BlancoDbMetaDataColumnStructure target) {
+        if (target == null) {
+            throw new IllegalArgumentException("Bug: BlancoDbMetaDataColumnStructure#copyTo(target): argument 'target' is null");
+        }
+
+        // No needs to copy parent class.
+
+        // Name: fName
+        // Type: java.lang.String
+        target.fName = this.fName;
+        // Name: fDataType
+        // Type: int
+        target.fDataType = this.fDataType;
+        // Name: fDataTypeDisplayName
+        // Type: java.lang.String
+        target.fDataTypeDisplayName = this.fDataTypeDisplayName;
+        // Name: fTypeName
+        // Type: java.lang.String
+        target.fTypeName = this.fTypeName;
+        // Name: fColumnSize
+        // Type: int
+        target.fColumnSize = this.fColumnSize;
+        // Name: fBufferLength
+        // Type: java.lang.String
+        target.fBufferLength = this.fBufferLength;
+        // Name: fDecimalDigits
+        // Type: int
+        target.fDecimalDigits = this.fDecimalDigits;
+        // Name: fNumPrecRadix
+        // Type: int
+        target.fNumPrecRadix = this.fNumPrecRadix;
+        // Name: fNullable
+        // Type: int
+        target.fNullable = this.fNullable;
+        // Name: fNullableDisplayName
+        // Type: java.lang.String
+        target.fNullableDisplayName = this.fNullableDisplayName;
+        // Name: fRemarks
+        // Type: java.lang.String
+        target.fRemarks = this.fRemarks;
+        // Name: fColumnDef
+        // Type: java.lang.String
+        target.fColumnDef = this.fColumnDef;
+        // Name: fSqlDataType
+        // Type: int
+        target.fSqlDataType = this.fSqlDataType;
+        // Name: fSqlDatetimeSub
+        // Type: int
+        target.fSqlDatetimeSub = this.fSqlDatetimeSub;
+        // Name: fCharOctetLength
+        // Type: int
+        target.fCharOctetLength = this.fCharOctetLength;
+        // Name: fOrdinalPosition
+        // Type: int
+        target.fOrdinalPosition = this.fOrdinalPosition;
+        // Name: fIsNullable
+        // Type: java.lang.String
+        target.fIsNullable = this.fIsNullable;
+        // Name: fScopeCatlog
+        // Type: java.lang.String
+        target.fScopeCatlog = this.fScopeCatlog;
+        // Name: fScopeSchema
+        // Type: java.lang.String
+        target.fScopeSchema = this.fScopeSchema;
+        // Name: fScopeTable
+        // Type: java.lang.String
+        target.fScopeTable = this.fScopeTable;
+        // Name: fSourceDataType
+        // Type: int
+        target.fSourceDataType = this.fSourceDataType;
+        // Name: fWritable
+        // Type: boolean
+        target.fWritable = this.fWritable;
     }
 }

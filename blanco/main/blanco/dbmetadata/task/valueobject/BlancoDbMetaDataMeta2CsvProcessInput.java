@@ -1,6 +1,3 @@
-/*
- * このソースコードは blanco Frameworkにより自動生成されました。
- */
 package blanco.dbmetadata.task.valueobject;
 
 /**
@@ -296,5 +293,52 @@ public class BlancoDbMetaDataMeta2CsvProcessInput {
         buf.append(",tmpdir=" + fTmpdir);
         buf.append("]");
         return buf.toString();
+    }
+
+    /**
+     * このバリューオブジェクトを指定のターゲットに複写します。
+     *
+     * <P>使用上の注意</P>
+     * <UL>
+     * <LI>オブジェクトのシャロー範囲のみ複写処理対象となります。
+     * <LI>オブジェクトが循環参照している場合には、このメソッドは使わないでください。
+     * </UL>
+     *
+     * @param target target value object.
+     */
+    public void copyTo(final BlancoDbMetaDataMeta2CsvProcessInput target) {
+        if (target == null) {
+            throw new IllegalArgumentException("Bug: BlancoDbMetaDataMeta2CsvProcessInput#copyTo(target): argument 'target' is null");
+        }
+
+        // No needs to copy parent class.
+
+        // Name: fVerbose
+        // Type: boolean
+        target.fVerbose = this.fVerbose;
+        // Name: fJdbcdriver
+        // Type: java.lang.String
+        target.fJdbcdriver = this.fJdbcdriver;
+        // Name: fJdbcurl
+        // Type: java.lang.String
+        target.fJdbcurl = this.fJdbcurl;
+        // Name: fJdbcuser
+        // Type: java.lang.String
+        target.fJdbcuser = this.fJdbcuser;
+        // Name: fJdbcpassword
+        // Type: java.lang.String
+        target.fJdbcpassword = this.fJdbcpassword;
+        // Name: fSchema
+        // Type: java.lang.String
+        target.fSchema = this.fSchema;
+        // Name: fTable
+        // Type: java.lang.String
+        target.fTable = this.fTable;
+        // Name: fTargetdir
+        // Type: java.lang.String
+        target.fTargetdir = this.fTargetdir;
+        // Name: fTmpdir
+        // Type: java.lang.String
+        target.fTmpdir = this.fTmpdir;
     }
 }
