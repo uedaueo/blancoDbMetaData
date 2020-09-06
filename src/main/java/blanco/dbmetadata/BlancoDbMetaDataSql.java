@@ -1,7 +1,7 @@
 /*
  * blanco Framework
  * Copyright (C) 2004-2006 IGA Tosiki
- * 
+ *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
  * License as published by the Free Software Foundation; either
@@ -26,15 +26,15 @@ import blanco.dbmetadata.valueobject.BlancoDbMetaDataColumnStructure;
 
 /**
  * データベースにSQLを発行し、メタ情報を取得するユーティリティ。
- * 
+ *
  * @author IGA Tosiki
  */
 public class BlancoDbMetaDataSql {
     /**
      * データベースにSQLを発行し、メタ情報を取得します。
-     * 
+     *
      * 厳格なSQL文チェックは実行されません。あくまでもメタ情報取得のみが実施されます。
-     * 
+     *
      * @throws SQLException
      *             SQL文に不備があった場合などに発生します。
      */
@@ -49,9 +49,9 @@ public class BlancoDbMetaDataSql {
 
     /**
      * データベースにSQLを発行し、メタ情報を取得します。
-     * 
+     *
      * SQL文を発行して結果セットを取得します。argSqlInParameterに値がセットされている場合には、SQL文の試し打ちも行います。
-     * 
+     *
      * @param conn
      *            データベース接続。
      * @param argSql
@@ -116,7 +116,7 @@ public class BlancoDbMetaDataSql {
 
     /**
      * ResultSetMetaData情報を構造体に展開します。
-     * 
+     *
      * @param resultSetMetaData
      * @param indexColumn
      * @return
@@ -154,7 +154,7 @@ public class BlancoDbMetaDataSql {
 
     /**
      * SQL入力パラメータをバインドします。
-     * 
+     *
      * @param stmt
      * @param argSqlInParameter
      * @throws SQLException
@@ -239,11 +239,12 @@ public class BlancoDbMetaDataSql {
                         new CharArrayReader(dummy), dummy.length);
             }
                 break;
+            case Types.OTHER: // DynamicClause で ITEMONLY が指定されている場合にこの処理をskipするためのフラグとして利用します。
+                break;
             case Types.DISTINCT:
             case Types.STRUCT:
             case Types.ARRAY:
             case Types.NULL:
-            case Types.OTHER:
             case Types.REF:
             case Types.DATALINK:
             case Types.ROWID:// さしあたりサポート範囲外にマップします。
