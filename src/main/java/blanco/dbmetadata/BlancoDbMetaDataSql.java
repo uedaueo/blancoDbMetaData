@@ -170,39 +170,39 @@ public class BlancoDbMetaDataSql {
         }
 
         // SQL入力パラメータをセットします。
-        for (int indexInParameter = 0; indexInParameter < argSqlInParameter
-                .size(); indexInParameter++) {
-            final BlancoDbMetaDataColumnStructure columnStructure = argSqlInParameter
-                    .get(indexInParameter);
+        int indexInParameter = 1;
+        for (BlancoDbMetaDataColumnStructure columnStructure : argSqlInParameter) {
+
+//            System.out.println("DbMetaData: name = " + columnStructure.getName() + ", type = " + columnStructure.getDataType());
 
             switch (columnStructure.getDataType()) {
             case Types.BIT:
             case Types.BOOLEAN:
-                stmt.setBoolean(indexInParameter + 1, false);
+                stmt.setBoolean(indexInParameter++, false);
                 break;
             case Types.TINYINT:
-                stmt.setByte(indexInParameter + 1, (byte) 0x00);
+                stmt.setByte(indexInParameter++, (byte) 0x00);
                 break;
             case Types.SMALLINT:
-                stmt.setShort(indexInParameter + 1, (short) 0);
+                stmt.setShort(indexInParameter++, (short) 0);
                 break;
             case Types.INTEGER:
-                stmt.setInt(indexInParameter + 1, 0);
+                stmt.setInt(indexInParameter++, 0);
                 break;
             case Types.BIGINT:
-                stmt.setLong(indexInParameter + 1, 0);
+                stmt.setLong(indexInParameter++, 0);
                 break;
             case Types.REAL:
-                stmt.setFloat(indexInParameter + 1, 0);
+                stmt.setFloat(indexInParameter++, 0);
                 break;
             case Types.FLOAT:
             case Types.DOUBLE:
-                stmt.setDouble(indexInParameter + 1, 0);
+                stmt.setDouble(indexInParameter++, 0);
                 break;
             case Types.NUMERIC:
             case Types.DECIMAL:
                 // "0"として与えています。JDK1.5対策です。
-                stmt.setBigDecimal(indexInParameter + 1, new BigDecimal("0"));
+                stmt.setBigDecimal(indexInParameter++, new BigDecimal("0"));
                 break;
             case Types.CHAR:
             case Types.VARCHAR:
@@ -211,31 +211,31 @@ public class BlancoDbMetaDataSql {
             case Types.NVARCHAR:
             case Types.LONGNVARCHAR:
                 // SQL Server 2005のuniqueidentifierでは、nullを与えるのが最適です。
-                stmt.setString(indexInParameter + 1, null);
+                stmt.setString(indexInParameter++, null);
                 break;
             case Types.DATE:
                 // 仮で TIMESTAMPと同じ動きをさせています。
             case Types.TIME:
                 // 仮で TIMESTAMPと同じ動きをさせています。
             case Types.TIMESTAMP:
-                stmt.setTimestamp(indexInParameter + 1, new Timestamp(0));
+                stmt.setTimestamp(indexInParameter++, new Timestamp(0));
                 break;
             case Types.BINARY:
             case Types.VARBINARY:
             case Types.LONGVARBINARY:
             case Types.BLOB: {
                 byte[] dummy = "0".getBytes();
-                stmt.setBinaryStream(indexInParameter + 1,
+                stmt.setBinaryStream(indexInParameter++,
                         new ByteArrayInputStream(dummy), dummy.length);
             }
                 break;
             case Types.JAVA_OBJECT:
-                stmt.setObject(indexInParameter + 1, new Object());
+                stmt.setObject(indexInParameter++, new Object());
                 break;
             case Types.CLOB: {
                 char[] dummy = new char[1];
                 dummy[0] = '0';
-                stmt.setCharacterStream(indexInParameter + 1,
+                stmt.setCharacterStream(indexInParameter++,
                         new CharArrayReader(dummy), dummy.length);
             }
                 break;
